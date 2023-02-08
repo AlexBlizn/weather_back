@@ -8,9 +8,13 @@ class AverageWeatherControllerTest extends ApiTestCase
 {
     public function testSomething(): void
     {
-        $response = static::createClient()->request('GET', '/');
+        $response = static::createClient()->request('GET', '/api/weather/Riga/week');
 
         $this->assertResponseIsSuccessful();
-        $this->assertJsonContains(['@id' => '/']);
+        $this->assertJsonContains([
+            "city" => "Riga",
+            "temperature" => 1,
+            "wind" => 9
+        ]);
     }
 }
