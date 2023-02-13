@@ -2,10 +2,18 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use App\Controller\Api\WeatherController;
 use App\Repository\WeatherRepository;
+use App\State\WeatherProvider;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ApiResource(operations: [
+    new Get(controller: WeatherController::class)
+])]
 #[ORM\Entity(repositoryClass: WeatherRepository::class)]
+#[Get(provider: WeatherProvider::class)]
 class Weather
 {
     #[ORM\Id]

@@ -2,8 +2,6 @@
 
 namespace App\Tests\Service\WeatherStackService;
 
-use App\Entity\City;
-use App\Entity\Weather;
 use App\Repository\CityRepository;
 use App\Service\WeatherStackService;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;

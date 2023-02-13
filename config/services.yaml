@@ -4,7 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-    app.weatherstack_access_key: '1ff1157d90618b0ed7818dd45790a384'
+    app.weatherstack_access_key: '%env(resolve:WEATHERSTACK_ACCESS_KEY)%'
 services:
     # default configuration for services in *this* file
     _defaults:
